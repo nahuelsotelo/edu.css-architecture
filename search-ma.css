@@ -1,0 +1,71 @@
+.searchForm {
+
+}
+.searchInput {
+    float: left;
+}
+
+.searchBtn {
+    float: left;
+}
+
+
+
+.pa,
+.bu,
+.sugbox {
+    background-color: #fff;
+}
+
+.bt {
+    border: none;
+    font-size: 15px;
+}
+.d2,
+.bt {
+    background-color: #EEE;
+    height: 23px;
+    width: 70px;
+    -webkit-appearance: none;
+}
+
+.bu,
+.d2 {
+    border: 1px solid #ccc;
+    border-bottom-color: #999;
+    border-right-color: #999;
+    color: #000;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.bu {
+    width: 400px;
+    font: 18px arial,sans-serif bold;
+    height: 18px;
+    margin: 0;
+    padding: 5px 8px 0 6px;
+    vertical-align: top;
+}
+
+.d1 {
+    border-right: 1px solid #eee;
+    height: 25px;
+    width: 61px;
+    z-index: 100;
+}
+
+.searchSug {
+    clear: both;
+    margin-left: 26px;
+}
+
+.sugbox {
+    clear: both;
+    display: none;
+    z-index: 99;
+    position: absolute;
+    width: 441px;
+    padding: 7px 7px 7px 7px;
+    border: 1px solid #999;
+}
