@@ -1,0 +1,33 @@
+.reveal {
+  p{
+    text-align: left;
+  }
+
+  ul {
+    display: block;
+  }
+
+  pre {
+    width: 100%;
+  }
+  .small {
+    font-size: .8em;
+    opacity: .7;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .h7,
+  .fz-m {
+    margin-top: 0;
+  }
+  .h7 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: .25rem;
+  }
+  .fz-m {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,21 @@
+# Where things are
+source:      ./src
+destination: ./slides
+layouts:     _layouts
+data_source: _includes
+
+# Handling Reading
+exclude:      [
+  'fonts',
+  'img',
+  'js',
+  'scss'
+]
+keep_files: [
+  'css',
+  'img',
+  'fonts',
+  'js'
+]
+encoding: 'utf-8'
+

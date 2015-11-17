@@ -1,0 +1,24 @@
+{
+  "name": "bau_master",
+  "version": "0.0.1",
+  "description": "Clases para la asignatura de front-end en el master de Diseño Web de BAU",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:davecarter/bau.git"
+  },
+  "author": "Nahuel Sotelo",
+  "devDependencies": {
+    "beepbeep": "^1.2.0",
+    "browser-sync": "^1.8.3",
+    "colors": "^1.0.3",
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-changed": "^1.1.0",
+    "gulp-concat": "^2.4.3",
+    "gulp-gh-pages": "^0.5.2",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sass": "2.0.4",
+    "merge-stream": "^0.1.6",
+    "run-sequence": "^1.0.2"
+  }
+}

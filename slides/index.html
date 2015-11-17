@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Buenas prácticas en CSS | Escuela IT - Herramientas Frontend</title>
+
+    <meta name="description" content="Escuela IT - Herramientas Frontend">
+    <meta name="author" content="Nahuel Sotelo">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme.css" id="theme">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h4><span style="border-bottom: 1px solid rgba(0,0,0,.6); display: inline-block; padding-bottom: .5rem;">Escuela IT - Herramientas Frontend</span></h4>
+            <h2><strong>Buenas prácticas en CSS</strong></h2>
+        </section>
+
+        <section>
+  <h3>Contenidos</h3>
+  <ol>
+    <li>Introducción</li>
+    <li>Estructura de directorios</li>
+    <li>Guías de estilo de código</li>
+  </ol>
+</section>
+
+
+<section>
+
+<section>
+  <h1>Introducción</h1>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+  ## ¿Por qué?
+
+  - Trabajar en un equipo de varios developers
+  (_Incluir y reemplazar miembros de un equipo. Codigo similar en diferentes proyectos_)
+
+  - Generar un código mantenible y escalable
+  (_Cuando estamos trbajando no pensamos que alguien tendrá que mantener ese codigo o que se añadiran mas funcionalidades pero pasará)
+
+  - Reutilizar código
+  (_si tenemos fragmentos de codigo reutilizables sin demasiada dependencia a un proyecto en concreto seremos mas rapidos en futuros proyectos. Tampoco hay que pasarse con la abstracción_)
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+  ## ¿Cómo?
+
+  - Generando un código **organizado**, **estructurado** y bien **documentado**
+  - Fragmentando el código en pequeños trozos (componentes/módulos/objetos) independientes.
+  (_Esto nos permitirá trabajar en una parte concreta de nuestra aplicación sin afectar al resto)
+  - Separando los componentes de su contexto.
+  - Refactorizando continuamente.
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Enlaces relacionados
+
+- [“Breaking Good Habits”](https://vimeo.com/44773888) —_Harry Roberts_
+- [“CSS Architectures: Scalable and Modular Approaches”](http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/) —_Denise Jacobs_
+
+</script>
+</section>
+
+</section>
+
+
+<section>
+
+<section>
+  <h1>Arquitectura de carpetas</h1>
+</section>
+
+<section>
+  <p>Es recomendable centralizar los estilos en un <strong class="fragment highlight-blue">ùnico fichero</strong> (<code>main.css</code>, <code>style.css</code>) que no contenga reglas, únicamente <code>@import</code> a otros ficheros.</p>
+
+  <div style="background: url('http://sass-guidelin.es/assets/images/sass-wallpaper_huge.jpg') no-repeat center center; background-size: 90% auto; height: 350px; overflow: hidden ;">
+  </div>
+  <small>Wallpaper by <a href="https://twitter.com/julien_he">Julien He</a></small>
+
+  <aside class="notes">
+    <p>Puede haber más de uno dependiendo las necesidades. Por ejemplo en una guía de estilos, si tenemos soporte para algun navegdor concreto o si tenemos estilos que sólo se cargan en una página.</p>
+
+    <p>Comentar sobre HTTP2.</p>
+
+  </aside>
+</section>
+
+<section>
+  <p>Podemos encontrar varias arquitecturas en internet pero es importante conseguir una que se adapte a <strong>las necesidades de nuestro proyecto</strong>.</p>
+  <p>La clave está en tener claro la función de cada selector que utilicemos y ubicarlo en el archivo correspondiente.</p>
+</section>
+
+<section>
+  <h2>
+    Un ejemplo: <br>
+    <a href="http://sass-guidelin.es/#the-7-1-pattern">El patrón 7-1</a>
+  </h2>
+</section>
+
+<section>
+  <p>7 carpetas, 1 archivo:</p>
+  <pre><code>
+sass/
+|
+|– base/
+|   |– _reset.scss
+|   |– _typography.scss
+|   ...
+|
+|– components/
+|   |– _buttons.scss
+|   |– _carousel.scss
+|   |– _cover.scss
+|   |– _dropdown.scss
+|   ...
+|
+|– layout/
+|   |– _navigation.scss
+|   |– _grid.scss
+|   |– _header.scss
+|   |– _footer.scss
+|   |– _sidebar.scss
+|   |– _forms.scss
+|   ...
+|
+|– pages/
+|   |– _home.scss
+|   |– _contact.scss
+|   ...
+|
+|– themes/
+|   |– _theme.scss
+|   |– _admin.scss
+|   ...
+|
+|– utils/
+|   |– _variables.scss
+|   |– _functions.scss
+|   |– _mixins.scss
+|   |– _helpers.scss
+|
+|– vendors/
+|   |– _bootstrap.scss
+|   |– _jquery-ui.scss
+|   ...
+|
+|
+`– main.scss
+  </code></pre>
+</section>
+
+<section>
+  <ul>
+    <li>
+      <p class="h7">base/</p>
+      <p class="fz-m">Es el punto de partida del proyecto (reset, tipografía, etc). Los selectores de esta carpeta tendrán una especificidad muy baja, probablemente la mayoría serán elementos.</p>
+    </li>
+
+    <li>
+      <p class="h7">layout/</p>
+      <p class="fz-m">Todo aquello referente al layout de nuestro sitio: grid, header, footer, sidebar, etc. Aquellos componentes que se repiten página a página.</p>
+    </li>
+
+    <li>
+      <p class="h7">components/</p>
+      <p class="fz-m">El core de nuestra web. Todos aquellos componentes reutilizables que utilizaremos a lo largo de nuestra web.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <ul>
+    <li>
+      <p class="h7">pages/</p>
+      <p class="fz-m">Estilos específicos para una página en concreto.</p>
+    </li>
+    <li>
+      <p class="h7">themes/</p>
+      <p class="fz-m">Si nuestro sitio tiene algun tipo de sistema de theming, podemos hacer uso de esta carpeta. En caso contrario puede omitirse.</p>
+    </li>
+    <li>
+      <p class="h7">utils/</p>
+      <p class="fz-m">Variables, funciones, mixins o cualquier otro tipo de helper. Lo normal es que los contenidos de esta carpeta no se compilen en el fichero .css.</p>
+    </li>
+    <li>
+      <p class="h7">vendors/</p>
+      <p class="fz-m">Estilos que no hemos creado nosotros: librerías como Bootstrap o estilos que acompañen algún plugin que estemos utilizando.</p>
+    </li>
+  </ul>
+
+  <aside class="notes">
+    <p>Recomendar el adaptar esta estructura a las necesidades de nuestro proyecto (enfoque Lean).</p>
+    <p>Comentar la arquitectura que estoy usando ahora (components / utils / vendors).</p>
+  </aside>
+</section>
+
+<section>
+  <p>Otros ejemplos de arquitecturas:</p>
+  <ul>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+  </ul>
+</section>
+</section>
+
+
+<section>
+<section>
+  <h1>Guía de estilos de código</h1>
+</section>
+
+<section>
+  <p>Una guía de estilos:</p>
+  <ul>
+    <li>Aumenta la coherencia de los documentos.</li>
+    <li>Facilita la lectura del código de nuestros compañeros.</li>
+    <li>Disminuye la cantidad de errores.</li>
+    <li>Refuerza las buenas prácticas.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="h7">Ejemplos:</p>
+  <ul>
+    <li><a href="http://cssguidelin.es/">CSS Guidelines</a></li>
+    <li><a href="http://sass-guidelin.es/">Sass Guidelines</a></li>
+    <li><a href="http://primercss.io/guidelines/">Primer (Github)</a></li>
+    <li><a href="http://codeguide.co/">Code Guide by @mdo</a></li>
+  </ul>
+
+  <aside class="notes">
+    <p>Estas guías también van muy bien como herramienta de aprendizaje para ver cómo trabaja otra gente.</p>
+  </aside>
+</section>
+
+<section>
+  <p>Existen herramientas que nos ayudarán a que todos los miembros del equipo sigan las pautas definidas.</p>
+  <ul>
+    <li>Sass Lint</li>
+    <li>CSS Comb</li>
+  </ul>
+</section>
+</section>
+
+
+
+    </div>
+</div>
+
+<script src="js/reveal/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Parallax scrolling
+    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+    { src: 'js/reveal/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'js/reveal/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'js/reveal/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'js/reveal/notes/notes.js', async: true }
+    ]
+  });
+</script>
+
+
+</body>
+</html>
