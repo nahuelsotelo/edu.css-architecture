@@ -43,7 +43,7 @@
         </section>
 
         <section>
-  <h3>Contenidos</h3>
+  <h2>Contenidos</h2>
   <ol>
     <li>Introducción</li>
     <li>Estructura de directorios</li>
@@ -54,189 +54,192 @@
 
 <section>
 
-<section>
-  <h1>Introducción</h1>
+  <section>
+    <h1>Introducción</h1>
+  </section>
+
+  <section>
+    <h2>¿Por qué?</h2>
+    <ul>
+      <li>Trabajar en un equipo de varios developers.</li>
+      <li>Generar un código mantenible y escalable.</li>
+      <li>Reutilizar código.</li>
+    </ul>
+
+    <aside class="notes">
+      <ol>
+        <li>Incluir y reemplazar miembros de un equipo. Codigo similar en diferentes proyectos</li>
+        <li>Cuando estamos trbajando no pensamos que alguien tendrá que mantener ese codigo o que se añadiran más funcionalidades, pero pasará.</li>
+        <li>Si tenemos fragmentos de codigo reutilizables sin demasiada dependencia a un proyecto en concreto seremos mas rápidos en futuros proyectos. Tampoco hay que pasarse con la abstracción.</li>
+      </ol>
+    </aside>
+  </section>
+
+  <section>
+    <h2>¿Cómo?</h2>
+    <ul>
+      <li>Generando un código <strong>organizado</strong>, <strong>estructurado</strong> y bien <strong>documentado</strong></li>
+      <li>Fragmentando el código en pequeños trozos (componentes/módulos/objetos) independientes</li>
+      <li>Separando los componentes de su contexto</li>
+      <li>Refactorizando continuamente</li>
+    </ul>
+
+    <aside class="notes">
+      <p>Esto nos permitirá trabajar en una parte concreta de nuestra aplicación sin afectar al resto</p>
+    </aside>
+  </section>
+
+  <section data-markdown>
+    <script type="text/template">
+      ## Enlaces relacionados
+
+      - [“Breaking Good Habits”](https://vimeo.com/44773888) —_Harry Roberts_
+      - [“CSS Architectures: Scalable and Modular Approaches”](http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/) —_Denise Jacobs_
+
+    </script>
+  </section>
+
 </section>
 
-<section data-markdown>
-<script type="text/template">
-  ## ¿Por qué?
-
-  - Trabajar en un equipo de varios developers
-  (_Incluir y reemplazar miembros de un equipo. Codigo similar en diferentes proyectos_)
-
-  - Generar un código mantenible y escalable
-  (_Cuando estamos trbajando no pensamos que alguien tendrá que mantener ese codigo o que se añadiran mas funcionalidades pero pasará)
-
-  - Reutilizar código
-  (_si tenemos fragmentos de codigo reutilizables sin demasiada dependencia a un proyecto en concreto seremos mas rapidos en futuros proyectos. Tampoco hay que pasarse con la abstracción_)
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-  ## ¿Cómo?
-
-  - Generando un código **organizado**, **estructurado** y bien **documentado**
-  - Fragmentando el código en pequeños trozos (componentes/módulos/objetos) independientes.
-  (_Esto nos permitirá trabajar en una parte concreta de nuestra aplicación sin afectar al resto)
-  - Separando los componentes de su contexto.
-  - Refactorizando continuamente.
-
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-## Enlaces relacionados
-
-- [“Breaking Good Habits”](https://vimeo.com/44773888) —_Harry Roberts_
-- [“CSS Architectures: Scalable and Modular Approaches”](http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/) —_Denise Jacobs_
-
-</script>
-</section>
-
-</section>
-
-
-<section>
-
-<section>
-  <h1>Arquitectura de carpetas</h1>
-</section>
 
 <section>
-  <p>Es recomendable centralizar los estilos en un <strong class="fragment highlight-blue">ùnico fichero</strong> (<code>main.css</code>, <code>style.css</code>) que no contenga reglas, únicamente <code>@import</code> a otros ficheros.</p>
 
-  <div style="background: url('http://sass-guidelin.es/assets/images/sass-wallpaper_huge.jpg') no-repeat center center; background-size: 90% auto; height: 350px; overflow: hidden ;">
-  </div>
-  <small>Wallpaper by <a href="https://twitter.com/julien_he">Julien He</a></small>
+  <section>
+    <h1>Arquitectura de carpetas</h1>
+  </section>
 
-  <aside class="notes">
-    <p>Puede haber más de uno dependiendo las necesidades. Por ejemplo en una guía de estilos, si tenemos soporte para algun navegdor concreto o si tenemos estilos que sólo se cargan en una página.</p>
+  <section>
+    <p>Es recomendable centralizar los estilos en un <strong class="fragment highlight-blue">ùnico fichero</strong> (<code>main.css</code>, <code>style.css</code>) que no contenga reglas, únicamente <code>@import</code> a otros ficheros.</p>
 
-    <p>Comentar sobre HTTP2.</p>
+    <div style="background: url('http://sass-guidelin.es/assets/images/sass-wallpaper_huge.jpg') no-repeat center center; background-size: 90% auto; height: 350px; overflow: hidden ;">
+    </div>
+    <small>Wallpaper by <a href="https://twitter.com/julien_he">Julien He</a></small>
 
-  </aside>
-</section>
+    <aside class="notes">
+      <p>Puede haber más de uno dependiendo las necesidades. Por ejemplo en una guía de estilos, si tenemos soporte para algun navegdor concreto o si tenemos estilos que sólo se cargan en una página.</p>
 
-<section>
-  <p>Podemos encontrar varias arquitecturas en internet pero es importante conseguir una que se adapte a <strong>las necesidades de nuestro proyecto</strong>.</p>
-  <p>La clave está en tener claro la función de cada selector que utilicemos y ubicarlo en el archivo correspondiente.</p>
-</section>
+      <p>Comentar sobre HTTP2.</p>
 
-<section>
-  <h2>
-    Un ejemplo: <br>
-    <a href="http://sass-guidelin.es/#the-7-1-pattern">El patrón 7-1</a>
-  </h2>
-</section>
+    </aside>
+  </section>
 
-<section>
-  <p>7 carpetas, 1 archivo:</p>
-  <pre><code>
-sass/
-|
-|– base/
-|   |– _reset.scss
-|   |– _typography.scss
-|   ...
-|
-|– components/
-|   |– _buttons.scss
-|   |– _carousel.scss
-|   |– _cover.scss
-|   |– _dropdown.scss
-|   ...
-|
-|– layout/
-|   |– _navigation.scss
-|   |– _grid.scss
-|   |– _header.scss
-|   |– _footer.scss
-|   |– _sidebar.scss
-|   |– _forms.scss
-|   ...
-|
-|– pages/
-|   |– _home.scss
-|   |– _contact.scss
-|   ...
-|
-|– themes/
-|   |– _theme.scss
-|   |– _admin.scss
-|   ...
-|
-|– utils/
-|   |– _variables.scss
-|   |– _functions.scss
-|   |– _mixins.scss
-|   |– _helpers.scss
-|
-|– vendors/
-|   |– _bootstrap.scss
-|   |– _jquery-ui.scss
-|   ...
-|
-|
-`– main.scss
-  </code></pre>
-</section>
+  <section>
+    <p>Podemos encontrar varias arquitecturas en internet pero es importante conseguir una que se adapte a <strong>las necesidades de nuestro proyecto</strong>.</p>
+    <p>La clave está en tener claro la función de cada selector que utilicemos y ubicarlo en el archivo correspondiente.</p>
+  </section>
 
-<section>
-  <ul>
-    <li>
-      <p class="h7">base/</p>
-      <p class="fz-m">Es el punto de partida del proyecto (reset, tipografía, etc). Los selectores de esta carpeta tendrán una especificidad muy baja, probablemente la mayoría serán elementos.</p>
-    </li>
+  <section>
+    <h2>
+      Un ejemplo: <br>
+      <a href="http://sass-guidelin.es/#the-7-1-pattern">El patrón 7-1</a>
+    </h2>
+  </section>
 
-    <li>
-      <p class="h7">layout/</p>
-      <p class="fz-m">Todo aquello referente al layout de nuestro sitio: grid, header, footer, sidebar, etc. Aquellos componentes que se repiten página a página.</p>
-    </li>
+  <section>
+    <p>7 carpetas, 1 archivo:</p>
+    <pre><code>
+  sass/
+  |
+  |– base/
+  |   |– _reset.scss
+  |   |– _typography.scss
+  |   ...
+  |
+  |– components/
+  |   |– _buttons.scss
+  |   |– _carousel.scss
+  |   |– _cover.scss
+  |   |– _dropdown.scss
+  |   ...
+  |
+  |– layout/
+  |   |– _navigation.scss
+  |   |– _grid.scss
+  |   |– _header.scss
+  |   |– _footer.scss
+  |   |– _sidebar.scss
+  |   |– _forms.scss
+  |   ...
+  |
+  |– pages/
+  |   |– _home.scss
+  |   |– _contact.scss
+  |   ...
+  |
+  |– themes/
+  |   |– _theme.scss
+  |   |– _admin.scss
+  |   ...
+  |
+  |– utils/
+  |   |– _variables.scss
+  |   |– _functions.scss
+  |   |– _mixins.scss
+  |   |– _helpers.scss
+  |
+  |– vendors/
+  |   |– _bootstrap.scss
+  |   |– _jquery-ui.scss
+  |   ...
+  |
+  |
+  `– main.scss
+    </code></pre>
+  </section>
 
-    <li>
-      <p class="h7">components/</p>
-      <p class="fz-m">El core de nuestra web. Todos aquellos componentes reutilizables que utilizaremos a lo largo de nuestra web.</p>
-    </li>
-  </ul>
-</section>
+  <section>
+    <ul>
+      <li>
+        <p class="h7">base/</p>
+        <p class="fz-m">Es el punto de partida del proyecto (reset, tipografía, etc). Los selectores de esta carpeta tendrán una especificidad muy baja, probablemente la mayoría serán elementos.</p>
+      </li>
 
-<section>
-  <ul>
-    <li>
-      <p class="h7">pages/</p>
-      <p class="fz-m">Estilos específicos para una página en concreto.</p>
-    </li>
-    <li>
-      <p class="h7">themes/</p>
-      <p class="fz-m">Si nuestro sitio tiene algun tipo de sistema de theming, podemos hacer uso de esta carpeta. En caso contrario puede omitirse.</p>
-    </li>
-    <li>
-      <p class="h7">utils/</p>
-      <p class="fz-m">Variables, funciones, mixins o cualquier otro tipo de helper. Lo normal es que los contenidos de esta carpeta no se compilen en el fichero .css.</p>
-    </li>
-    <li>
-      <p class="h7">vendors/</p>
-      <p class="fz-m">Estilos que no hemos creado nosotros: librerías como Bootstrap o estilos que acompañen algún plugin que estemos utilizando.</p>
-    </li>
-  </ul>
+      <li>
+        <p class="h7">layout/</p>
+        <p class="fz-m">Todo aquello referente al layout de nuestro sitio: grid, header, footer, sidebar, etc. Aquellos componentes que se repiten página a página.</p>
+      </li>
 
-  <aside class="notes">
-    <p>Recomendar el adaptar esta estructura a las necesidades de nuestro proyecto (enfoque Lean).</p>
-    <p>Comentar la arquitectura que estoy usando ahora (components / utils / vendors).</p>
-  </aside>
-</section>
+      <li>
+        <p class="h7">components/</p>
+        <p class="fz-m">El core de nuestra web. Todos aquellos componentes reutilizables que utilizaremos a lo largo de nuestra web.</p>
+      </li>
+    </ul>
+  </section>
 
-<section>
-  <p>Otros ejemplos de arquitecturas:</p>
-  <ul>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-  </ul>
-</section>
+  <section>
+    <ul>
+      <li>
+        <p class="h7">pages/</p>
+        <p class="fz-m">Estilos específicos para una página en concreto.</p>
+      </li>
+      <li>
+        <p class="h7">themes/</p>
+        <p class="fz-m">Si nuestro sitio tiene algun tipo de sistema de theming, podemos hacer uso de esta carpeta. En caso contrario puede omitirse.</p>
+      </li>
+      <li>
+        <p class="h7">utils/</p>
+        <p class="fz-m">Variables, funciones, mixins o cualquier otro tipo de helper. Lo normal es que los contenidos de esta carpeta no se compilen en el fichero .css.</p>
+      </li>
+      <li>
+        <p class="h7">vendors/</p>
+        <p class="fz-m">Estilos que no hemos creado nosotros: librerías como Bootstrap o estilos que acompañen algún plugin que estemos utilizando.</p>
+      </li>
+    </ul>
+
+    <aside class="notes">
+      <p>Recomendar el adaptar esta estructura a las necesidades de nuestro proyecto (enfoque Lean).</p>
+      <p>Comentar la arquitectura que estoy usando ahora (components / utils / vendors).</p>
+    </aside>
+  </section>
+
+  <section>
+    <p>Otros ejemplos de arquitecturas:</p>
+    <ul>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </section>
 </section>
 
 
@@ -248,15 +251,15 @@ sass/
 <section>
   <p>Una guía de estilos:</p>
   <ul>
-    <li>Aumenta la coherencia de los documentos.</li>
-    <li>Facilita la lectura del código de nuestros compañeros.</li>
+    <li>Genera un código más legible y fácil de mantener.</li>
     <li>Disminuye la cantidad de errores.</li>
     <li>Refuerza las buenas prácticas.</li>
+    <li>Permite trabajar en un mismo proyecto a desarrolladores de diferente nivel.</li>
   </ul>
 </section>
 
 <section>
-  <p class="h7">Ejemplos:</p>
+  <h2>Ejemplos:</h2>
   <ul>
     <li><a href="http://cssguidelin.es/">CSS Guidelines</a></li>
     <li><a href="http://sass-guidelin.es/">Sass Guidelines</a></li>
@@ -276,6 +279,174 @@ sass/
     <li>CSS Comb</li>
   </ul>
 </section>
+</section>
+
+
+<section>
+  <section>
+    <h1>Componentes modulares</h1>
+  </section>
+
+  <section>
+    <blockquote>
+      <p>“It's a repeating visual pattern, that can be abstracted into an independent snippet of HTML, CSS and possibly JavaScript.”</p>
+      <footer>- Nicole Sullivan</footer>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Características de un componente:</h2>
+    <ul>
+      <li>Son un fragmento de la interfaz que cumple una única función.</li>
+      <li>Son independientes, tanto de su contexto como del resto de componentes.</li>
+      <li>Son reutilizables.</li>
+      <li>Son autocontenidos, no filtran estilos a otros componentes.</li>
+    </ul>
+
+    <aside class="notes">
+      <p>Separados del layout. Su relación con el contexto se gestiona por separado.</p>
+      <p>El CSS de un componente tiene que tener una logica interna, que debe apreciarse leyendo el código.</p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Enlaces relacionados:</h2>
+    <ul>
+      <li><a href="http://blog.millermedeiros.com/solid-css/">Solid Css</a></li>
+      <li><a href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">The single responsibility principle applied to CSS</a></li>
+    </ul>
+  </section>
+</section>
+
+
+<section>
+  <section>
+    <h1>Especificidad</h1>
+  </section>
+
+  <section>
+      <p>En CSS, la <em>especificidad</em>, es lo que determina que estilo será el que acabará aplicandose a un elemento determinado.</p>
+      <p>Cuando a un elemento se le aplica <strong>más de un selector con reglas que actúan sobre la misma propiedad</strong>, es la especificidad la encargada de resolver este conflicto.</p>
+  </section>
+
+  <section>
+      <p>A grandes rasgos podemos ordenar los diferentes tipos de selectores de menor a mayor peso específico de la siguiente manera:</p>
+      <ol>
+          <li>Selectores de elemento</li>
+          <li>Selectores contextuales</li>
+          <li>Clases</li>
+          <li>IDs</li>
+      </ol>
+  </section>
+
+  <section>
+      <h2>Calcular especificidad</h2>
+  </section>
+
+  <section>
+      <p class="specificity"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></p>
+  </section>
+
+  <section>
+      <pre class="specificity__example">
+<span class="specificity__element">p</span> {
+  color: red;
+}</pre>
+      <hr>
+      <p class="specificity"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></p>
+  </section>
+
+  <section>
+      <pre class="specificity__example">
+<span class="specificity__class">.text</span> {
+  color: red;
+}</pre>
+      <hr>
+      <p class="specificity fragment"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">1</span>,<span class="specificity__element">0</span></p>
+  </section>
+
+  <section>
+      <pre class="specificity__example">
+<span class="specificity__id">#main</span> <span class="specificity__element">strong</span> {
+  color: red;
+}</pre>
+      <hr>
+      <p class="specificity fragment"><span class="specificity__inline">0</span>,<span class="specificity__id">1</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></p>
+  </section>
+
+  <section>
+      <pre class="specificity__example" style="font-size: 2rem;">
+<span class="specificity__element">header</span> <span class="specificity__element">ul</span><span class="specificity__id">#main-nav</span> <span class="specificity__class">.sub-menu</span> <span class="specificity__element">li</span><span class="specificity__class">.child</span> <span class="specificity__element">a</span><span class="specificity__class">:hover</span> {
+  color: red;
+}</pre>
+      <hr>
+      <p class="specificity fragment"><span class="specificity__inline">0</span>,<span class="specificity__id">1</span>,<span class="specificity__class">3</span>,<span class="specificity__element">4</span></p>
+  </section>
+
+  <section>
+      <pre class="specificity__example" style="font-size: 2rem;">
+&#60;p <span class="specificity__inline">style="color: red"</span>&#62;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&#60;/p&#62;</pre>
+      <hr>
+      <p class="specificity fragment"><span class="specificity__inline">1</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></p>
+  </section>
+
+  <section>
+      <pre class="specificity__example">
+<span class="specificity__element">p</span> {
+  color: red <span style="color: red";>!important</span>;
+}</pre>
+      <hr>
+      <p class="specificity specificity--important">
+          <span class="specificity__important-wrap"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></span>
+          <span class="specificity__important-wrap"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></span></p>
+  </section>
+</section>
+
+
+<section>
+  <section>
+    <h1>Selectores</h1>
+  </section>
+
+  <section>
+    <h3>Carcterísticas de un buen selector</h3>
+    <ul>
+      <li>Tiene baja especificidad</li>
+      <li>Es sólido (no depende del contexto)</li>
+      <li>Es autodocumentado (su función se entiende solo con leerlo)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Curva de especificidad</h2>
+  </section>
+
+  <section>
+    <h2>Ciclomandanga</h2>
+  </section>
+
+  <section>
+    <h2>Nomenclaturas</h2>
+    <blockquote>
+      "What we want is to be able to write code that is as transparent and self-documenting as possible. Transparency means that it is clear and obvious (to others) in its intent; self-documenting means that we don’t have to lose time to writing and reading lengthy, supplementary documentation."
+      <footer>- Harry Roberts</footer>
+    </blockquote>
+  </section>
+</section>
+
+
+<section>
+  <section>
+    <h1>Sistemas de Nomenclatura</h1>
+  </section>
+
+  <section>
+    <h2>BEM</h2>
+  </section>
+
+  <section>
+    <h2>Namespaces</h2>
+  </section>
 </section>
 
 
