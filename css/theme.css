@@ -6,7 +6,7 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(./fonts/league-gothic/league-gothic.css);
+@import url(../fonts/league-gothic/league-gothic.css);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /*********************************************
  * GLOBAL STYLES
@@ -344,7 +344,7 @@ body {
 
 .reveal .specificity {
   color: #333;
-  font-family: "Oswald", Impact, sans-serif;
+  font-family: 'League Gothic', Impact, sans-serif;
   font-size: 8rem;
   line-height: 1.2;
   margin-top: 10rem;
