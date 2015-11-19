@@ -5,7 +5,9 @@
     box-shadow: none;
   }
   blockquote {
+    font-size: .9em;
     width: 90%;
+
 
     footer {
       border-top: 2px dotted rgba(0,0,0, .3);
@@ -13,7 +15,7 @@
       padding-top: 1rem;
       text-align: right;
       font-style: italic;
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: 100;
     }
   }
@@ -37,10 +39,14 @@
     margin-top: 0;
   }
   .h7 {
+    font-family: inherit;
     font-size: 2.25rem;
     font-weight: 600;
+    letter-spacing: 0;
     margin-top: 2rem;
     margin-bottom: .25rem;
+    text-transform: none;
+    text-align: left;
   }
   .fz-m {
     font-size: 1.75rem;

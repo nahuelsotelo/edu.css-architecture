@@ -16,7 +16,7 @@
   </section>
 
   <section>
-    <pre class="fz-m"><code>
+    <pre class="fz-m"><code class="hljs css">
   .nombre-del-bloque { ... }
 
   .nombre-del-bloque__elemento { ... }
@@ -28,7 +28,7 @@
   <section>
     <h2>BEM Nesting</h2>
 
-    <pre class="fz-s"><code>
+    <pre class="fz-s"><code class="hljs sass">
     .nombre-del-bloque {
       ...
 
@@ -44,6 +44,7 @@
   </section>
 
   <section>
+    <p>Refactorizando:</p>
     <pre contenteditable><code class="hljs css">
   .tab-group { ... } /* 0, 0, 1, 0 */
 
@@ -54,7 +55,7 @@
   .tab-group a.selected { ... } /* 0, 0, 2, 1 */
     </code></pre>
 
-    <pre contenteditable class="fragment"><code>
+    <pre contenteditable class="fragment"><code class="hljs css">
   .tab-group { ... } /* 0, 0, 1, 0 */
 
   .tab-group__tab { ... } /* 0, 0, 1, 0 */
@@ -65,25 +66,31 @@
     </code></pre>
   </section>
 
+  <!--
   <section>
     <h2>Namespaces</h2>
     <p><a href="">Namespaces link</a></p>
   </section>
-
+  -->
   <section>
     <h2>Otros sistemas nomenclaturas</h2>
     <ul>
+      <li>
+        <a href="http://seesparkbox.com/foundry/naming_css_stuff_is_really_hard">“Naming CSS Stuff Is Really Hard”</a> - <i>Ethan Muller</i>
+      </li>
+
+      <li>
+        <a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">“More Transparent UI Code with Namespaces”</a> - <i>Harry Roberts</i>
+
+      </li>
       <li>
         <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md">SUIT</a>
       </li>
 
       <li>
-        <a href="https://smacss.com/">“SMACSS”</a> - <i>Jonathan Snook.</i>
+        <a href="https://smacss.com/">“SMACSS”</a> - <i>Jonathan Snook</i>
       </li>
 
-      <li>
-        <a href="http://seesparkbox.com/foundry/naming_css_stuff_is_really_hard">“Naming CSS Stuff Is Really Hard”</a> - <i>Ethan Muller</i>
-      </li>
     </ul>
   </section>
 </section>

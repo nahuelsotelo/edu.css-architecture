@@ -52,6 +52,7 @@
     <li>Especificidad</li>
     <li>Selectores</li>
     <li>Sistemas de Nomenclatura</li>
+    <li>Conclusiones</li>
   </ol>
 </section>
 
@@ -169,6 +170,8 @@
     </aside>
   </section>
 
+
+
   <section>
     <p>Podemos encontrar varias arquitecturas en internet pero es importante conseguir una que se adapte a <strong>las necesidades de nuestro proyecto</strong>.</p>
     <p>La clave está en tener claro la función de cada selector que utilicemos y ubicarlo en el archivo correspondiente.</p>
@@ -183,7 +186,7 @@
 
   <section>
     <p>7 carpetas, 1 archivo:</p>
-    <pre><code>
+    <pre><code class="hljs css">
   sass/
   |
   |– base/
@@ -279,6 +282,39 @@
   </section>
 
   <section>
+    <pre><code class="hljs sass">
+  @import 'utils/variables';
+  @import 'utils/functions';
+  @import 'utils/mixins';
+  @import 'utils/placeholders';
+
+  @import 'vendors/bootstrap';
+  @import 'vendors/jquery-ui';
+
+  @import 'base/reset';
+  @import 'base/typography';
+
+  @import 'layout/navigation';
+  @import 'layout/grid';
+  @import 'layout/header';
+  @import 'layout/footer';
+  @import 'layout/sidebar';
+  @import 'layout/forms';
+
+  @import 'components/buttons';
+  @import 'components/carousel';
+  @import 'components/cover';
+  @import 'components/dropdown';
+
+  @import 'pages/home';
+  @import 'pages/contact';
+
+  @import 'themes/theme';
+  @import 'themes/admin';
+    </code></pre>
+  </section>
+
+  <section>
     <h2>Enlaces relacionados:</h2>
     <ul>
       <li>
@@ -296,8 +332,12 @@
   <section>
     <blockquote>
       <p>“It's a repeating visual pattern, that can be abstracted into an independent snippet of HTML, CSS and possibly JavaScript.”</p>
-      <footer>- Nicole Sullivan</footer>
+      <footer>- <cite><a href="https://vimeo.com/72759139">Nicole Sullivan</a></cite></footer>
     </blockquote>
+
+    <div>
+      <img src="../img/bem02.png" alt="" style="height: 350px;">
+    </div>
   </section>
 
   <section>
@@ -319,16 +359,17 @@
     <h2>Enlaces relacionados:</h2>
     <ul>
       <li>
-        <a href="http://www.sitepoint.com/look-different-sass-architectures/">“A Look at Different Sass Architectures”</a> - <i>Vinay Raghu</i>
+        <a href="http://bradfrost.com/blog/post/atomic-web-design/">“Atomic Design”</a> - <i>Brad Frost</i>
       </li>
 
       <li>
-        <a href="http://blog.millermedeiros.com/solid-css/">“Solid Css”</a> - <i></i>
+        <a href="http://blog.millermedeiros.com/solid-css/">“Solid Css”</a> - <i> Miller H. Borges Medeiros</i>
       </li>
 
       <li>
         <a href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">“The single responsibility principle applied to CSS”</a> - <i>Harry Roberts</i>
       </li>
+
     </ul>
   </section>
 </section>
@@ -415,6 +456,18 @@
           <span class="specificity__important-wrap"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></span>
           <span class="specificity__important-wrap"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></span></p>
   </section>
+
+  <section>
+    <h2>Enlaces relacionados:</h2>
+    <ul>
+      <li>
+        <a href="https://css-tricks.com/strategies-keeping-css-specificity-low/">“Strategies for Keeping CSS Specificity Low”</a> - <i>Chris Coyier</i>
+      </li>
+
+      <li>
+        <a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/">“When using IDs can be a pain in the class...”</a> - <i>Harry Roberts</i>
+      </li>
+  </section>
 </section>
 
 
@@ -449,11 +502,11 @@
     <h2>Especificidad plana</h2>
     <p>Intentar mantener los selectores lo más cortos posibles (evitar nesting) nos ayudará a que nuestros componentes no estén atados a un contexto determinado y sean <strong>independientes</strong> del HTML.</p>
 
-    <pre><code>
-  // Cuidado!
+    <pre><code class="hljs css">
+  /* Cuidado! */
   #main-header nav ul > li .nav-link:first-child { ... }  /* 0, 1, 2, 3 */
 
-  // Mejor
+  /* Mejor */
   .MainNav-link--first { ... }  /* 0, 0, 1, 0 */
     </code></pre>
   </section>
@@ -469,10 +522,6 @@
   <section>
     <h2>Enlaces relacionados:</h2>
     <ul>
-      <li>
-        <a href="https://css-tricks.com/strategies-keeping-css-specificity-low/">“Strategies for Keeping CSS Specificity Low”</a> - <i>Chris Coyier</i>
-      </li>
-
       <li>
         <a href="https://vimeo.com/140641366">“CSS For Software Engineers For CSS Developers”</a> - <i>Harry Roberts</i>
       </li>
@@ -502,7 +551,7 @@
   </section>
 
   <section>
-    <pre class="fz-m"><code>
+    <pre class="fz-m"><code class="hljs css">
   .nombre-del-bloque { ... }
 
   .nombre-del-bloque__elemento { ... }
@@ -514,7 +563,7 @@
   <section>
     <h2>BEM Nesting</h2>
 
-    <pre class="fz-s"><code>
+    <pre class="fz-s"><code class="hljs sass">
     .nombre-del-bloque {
       ...
 
@@ -530,6 +579,7 @@
   </section>
 
   <section>
+    <p>Refactorizando:</p>
     <pre contenteditable><code class="hljs css">
   .tab-group { ... } /* 0, 0, 1, 0 */
 
@@ -540,7 +590,7 @@
   .tab-group a.selected { ... } /* 0, 0, 2, 1 */
     </code></pre>
 
-    <pre contenteditable class="fragment"><code>
+    <pre contenteditable class="fragment"><code class="hljs css">
   .tab-group { ... } /* 0, 0, 1, 0 */
 
   .tab-group__tab { ... } /* 0, 0, 1, 0 */
@@ -572,6 +622,37 @@
       </li>
     </ul>
   </section>
+</section>
+
+
+<section>
+  <section>
+    <h1>Cómo continuar</h1>
+  </section>
+
+  <section>
+    <h2 class="h7">Aprender y adaptar:</h2>
+    <p class="fz-m">Es importante seguir leyendo y mirando los diferentes frameworks o soluciones que va creando la comunidad pero siempre adaptándolos a nuestras necesidades. <strong>No al copy-paste</strong>.</p>
+
+    <h2 class="h7">Practicar:</h2>
+    <p class="fz-m">Aplicar las buenas prácticas siempre que se pueda, la mayoría son universales y no dependen del tamaño o naturaleza del proyecto.</p>
+
+    <h2 class="h7">Divide y vencerás:</h2>
+    <p class="fz-m">Intentar repartir nuestro código en pequeños trozos manejables. Evitar los archivos de 2000 líneas.</p>
+  </section>
+
+  <section>
+    <h2 class="h7">Documentar:</h2>
+    <p class="fz-m">Dejar nuestro código bien documentado nos ayudará a volver sobre nuestros proyectos pasado un tiempo sin perder la razón, además de ayudar a otros developers que trabajen con el mismo.</p>
+    <p class="fz-m">Documentar también nos ayuda a reflexionar sobre lo que hemos hecho y fijar conceptos.</p>
+
+    <h2 class="h7">Refactor constante:</h2>
+    <p class="fz-m">No tener miedo al refactor siempre y cuando se haga con las precauciones adecuadas. Si hemos seguido buenas prácticas refactorizar no debería ser muy costoso.</p>
+  </section>
+</section>
+
+<section>
+  <h1>¡Gracias!</h1>
 </section>
 
 

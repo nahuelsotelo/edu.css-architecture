@@ -29,11 +29,11 @@
     <h2>Especificidad plana</h2>
     <p>Intentar mantener los selectores lo más cortos posibles (evitar nesting) nos ayudará a que nuestros componentes no estén atados a un contexto determinado y sean <strong>independientes</strong> del HTML.</p>
 
-    <pre><code>
-  // Cuidado!
+    <pre><code class="hljs css">
+  /* Cuidado! */
   #main-header nav ul > li .nav-link:first-child { ... }  /* 0, 1, 2, 3 */
 
-  // Mejor
+  /* Mejor */
   .MainNav-link--first { ... }  /* 0, 0, 1, 0 */
     </code></pre>
   </section>
@@ -49,10 +49,6 @@
   <section>
     <h2>Enlaces relacionados:</h2>
     <ul>
-      <li>
-        <a href="https://css-tricks.com/strategies-keeping-css-specificity-low/">“Strategies for Keeping CSS Specificity Low”</a> - <i>Chris Coyier</i>
-      </li>
-
       <li>
         <a href="https://vimeo.com/140641366">“CSS For Software Engineers For CSS Developers”</a> - <i>Harry Roberts</i>
       </li>

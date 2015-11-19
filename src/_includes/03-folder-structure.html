@@ -20,6 +20,8 @@
     </aside>
   </section>
 
+
+
   <section>
     <p>Podemos encontrar varias arquitecturas en internet pero es importante conseguir una que se adapte a <strong>las necesidades de nuestro proyecto</strong>.</p>
     <p>La clave está en tener claro la función de cada selector que utilicemos y ubicarlo en el archivo correspondiente.</p>
@@ -34,7 +36,7 @@
 
   <section>
     <p>7 carpetas, 1 archivo:</p>
-    <pre><code>
+    <pre><code class="hljs css">
   sass/
   |
   |– base/
@@ -127,6 +129,39 @@
       <p>Recomendar el adaptar esta estructura a las necesidades de nuestro proyecto (enfoque Lean).</p>
       <p>Comentar la arquitectura que estoy usando ahora (components / utils / vendors).</p>
     </aside>
+  </section>
+
+  <section>
+    <pre><code class="hljs sass">
+  @import 'utils/variables';
+  @import 'utils/functions';
+  @import 'utils/mixins';
+  @import 'utils/placeholders';
+
+  @import 'vendors/bootstrap';
+  @import 'vendors/jquery-ui';
+
+  @import 'base/reset';
+  @import 'base/typography';
+
+  @import 'layout/navigation';
+  @import 'layout/grid';
+  @import 'layout/header';
+  @import 'layout/footer';
+  @import 'layout/sidebar';
+  @import 'layout/forms';
+
+  @import 'components/buttons';
+  @import 'components/carousel';
+  @import 'components/cover';
+  @import 'components/dropdown';
+
+  @import 'pages/home';
+  @import 'pages/contact';
+
+  @import 'themes/theme';
+  @import 'themes/admin';
+    </code></pre>
   </section>
 
   <section>
