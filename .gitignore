@@ -36,3 +36,4 @@ _draft/
 sitespeed-result/
 .tmp
 app/components
+.publish/
