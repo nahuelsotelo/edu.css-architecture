@@ -4,19 +4,19 @@
 {% include head.html %}
 
 <body>
-<div class="reveal">
+  <div class="reveal">
     <div class="slides">
-        <section>
-            <h4><span style="border-bottom: 1px solid rgba(0,0,0,.6); display: inline-block; padding-bottom: .5rem;">Escuela IT - Herramientas Frontend</span></h4>
-            <h2><strong>{{ page.lesson_title }}</strong></h2>
-        </section>
+      <section>
+        <h4><span style="border-bottom: 1px solid rgba(0,0,0,.6); display: inline-block; padding-bottom: .5rem;">Escuela IT - Herramientas Frontend</span></h4>
+        <h1 style="font-size: 7rem;"><strong>{{ page.lesson_title }}</strong></h1>
+      </section>
 
-        {{ content }}
+      {{ content }}
 
     </div>
-</div>
+  </div>
 
-{% include scripts-footer.html %}
+  {% include scripts-footer.html %}
 
 </body>
 </html>

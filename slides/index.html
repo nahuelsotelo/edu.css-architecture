@@ -35,19 +35,23 @@
 
 
 <body>
-<div class="reveal">
+  <div class="reveal">
     <div class="slides">
-        <section>
-            <h4><span style="border-bottom: 1px solid rgba(0,0,0,.6); display: inline-block; padding-bottom: .5rem;">Escuela IT - Herramientas Frontend</span></h4>
-            <h2><strong>Buenas prácticas en CSS</strong></h2>
-        </section>
+      <section>
+        <h4><span style="border-bottom: 1px solid rgba(0,0,0,.6); display: inline-block; padding-bottom: .5rem;">Escuela IT - Herramientas Frontend</span></h4>
+        <h1 style="font-size: 7rem;"><strong>Buenas prácticas en CSS</strong></h1>
+      </section>
 
-        <section>
+      <section>
   <h2>Contenidos</h2>
   <ol>
     <li>Introducción</li>
-    <li>Estructura de directorios</li>
-    <li>Guías de estilo de código</li>
+    <li>Guía de estilos de código</li>
+    <li>Arquitectura de carpetas</li>
+    <li>Componentes modulares</li>
+    <li>Especificidad</li>
+    <li>Selectores</li>
+    <li>Sistemas de Nomenclatura</li>
   </ol>
 </section>
 
@@ -56,6 +60,10 @@
 
   <section>
     <h1>Introducción</h1>
+
+    <aside class="notes">
+      <p>¿Por qué es importante cuidar el código y tener buenas prácticas?</p>
+    </aside>
   </section>
 
   <section>
@@ -89,16 +97,53 @@
     </aside>
   </section>
 
-  <section data-markdown>
-    <script type="text/template">
-      ## Enlaces relacionados
+  <section>
+    <h2>Enlaces relacionados</h2>
+    <ul>
+      <li><a href="https://vimeo.com/44773888">“Breaking Good Habits”</a> - <i>Harry Roberts</i></li>
+      <li><a href="http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/">“CSS Architectures: Scalable and Modular Approaches”</a> - <i>Denise Jacobs</i></li>
+    </ul>
+  </section>
+</section>
 
-      - [“Breaking Good Habits”](https://vimeo.com/44773888) —_Harry Roberts_
-      - [“CSS Architectures: Scalable and Modular Approaches”](http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/) —_Denise Jacobs_
 
-    </script>
+<section>
+  <section>
+    <h1>Guía de estilos de código</h1>
   </section>
 
+  <section>
+    <p>Una guía de estilos:</p>
+    <ul>
+      <li>Genera un código más legible y fácil de mantener.</li>
+      <li>Disminuye la cantidad de errores.</li>
+      <li>Refuerza las buenas prácticas.</li>
+      <li>Permite trabajar en un mismo proyecto a desarrolladores de diferente nivel.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ejemplos:</h2>
+    <ul>
+      <li><a href="http://cssguidelin.es/">CSS Guidelines</a></li>
+      <li><a href="http://sass-guidelin.es/">Sass Guidelines</a></li>
+      <li><a href="http://primercss.io/guidelines/">Primer (Github)</a></li>
+      <li><a href="http://codeguide.co/">Code Guide by @mdo</a></li>
+    </ul>
+
+    <aside class="notes">
+      <p>Estas guías también van muy bien como herramienta de aprendizaje para ver cómo trabaja otra gente.</p>
+    </aside>
+  </section>
+
+  <section>
+    <p>Existen herramientas que nos ayudarán a que todos los miembros del equipo sigan las pautas definidas.</p>
+    <ul>
+      <li><a href="https://github.com/brigade/scss-lint">Sass Lint</a></li>
+      <li><a href="http://csscomb.com/">CSS Comb</a></li>
+      <li><a href="http://editorconfig.org/">EditorConfig</a></li>
+    </ul>
+  </section>
 </section>
 
 
@@ -111,7 +156,8 @@
   <section>
     <p>Es recomendable centralizar los estilos en un <strong class="fragment highlight-blue">ùnico fichero</strong> (<code>main.css</code>, <code>style.css</code>) que no contenga reglas, únicamente <code>@import</code> a otros ficheros.</p>
 
-    <div style="background: url('http://sass-guidelin.es/assets/images/sass-wallpaper_huge.jpg') no-repeat center center; background-size: 90% auto; height: 350px; overflow: hidden ;">
+    <div>
+      <img src="../img/sass-wallpaper.jpg" alt="" style="height: 350px">
     </div>
     <small>Wallpaper by <a href="https://twitter.com/julien_he">Julien He</a></small>
 
@@ -233,52 +279,12 @@
   </section>
 
   <section>
-    <p>Otros ejemplos de arquitecturas:</p>
+    <h2>Enlaces relacionados:</h2>
     <ul>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
-    </ul>
+      <li>
+        <a href="http://www.sitepoint.com/look-different-sass-architectures/">“A Look at Different Sass Architectures”</a> - <i>Vinay Raghu</i>
+      </li>
   </section>
-</section>
-
-
-<section>
-<section>
-  <h1>Guía de estilos de código</h1>
-</section>
-
-<section>
-  <p>Una guía de estilos:</p>
-  <ul>
-    <li>Genera un código más legible y fácil de mantener.</li>
-    <li>Disminuye la cantidad de errores.</li>
-    <li>Refuerza las buenas prácticas.</li>
-    <li>Permite trabajar en un mismo proyecto a desarrolladores de diferente nivel.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Ejemplos:</h2>
-  <ul>
-    <li><a href="http://cssguidelin.es/">CSS Guidelines</a></li>
-    <li><a href="http://sass-guidelin.es/">Sass Guidelines</a></li>
-    <li><a href="http://primercss.io/guidelines/">Primer (Github)</a></li>
-    <li><a href="http://codeguide.co/">Code Guide by @mdo</a></li>
-  </ul>
-
-  <aside class="notes">
-    <p>Estas guías también van muy bien como herramienta de aprendizaje para ver cómo trabaja otra gente.</p>
-  </aside>
-</section>
-
-<section>
-  <p>Existen herramientas que nos ayudarán a que todos los miembros del equipo sigan las pautas definidas.</p>
-  <ul>
-    <li>Sass Lint</li>
-    <li>CSS Comb</li>
-  </ul>
-</section>
 </section>
 
 
@@ -312,8 +318,17 @@
   <section>
     <h2>Enlaces relacionados:</h2>
     <ul>
-      <li><a href="http://blog.millermedeiros.com/solid-css/">Solid Css</a></li>
-      <li><a href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">The single responsibility principle applied to CSS</a></li>
+      <li>
+        <a href="http://www.sitepoint.com/look-different-sass-architectures/">“A Look at Different Sass Architectures”</a> - <i>Vinay Raghu</i>
+      </li>
+
+      <li>
+        <a href="http://blog.millermedeiros.com/solid-css/">“Solid Css”</a> - <i></i>
+      </li>
+
+      <li>
+        <a href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">“The single responsibility principle applied to CSS”</a> - <i>Harry Roberts</i>
+      </li>
     </ul>
   </section>
 </section>
@@ -418,19 +433,53 @@
   </section>
 
   <section>
-    <h2>Curva de especificidad</h2>
+    <p>El gráfico de especificidad es una representación de cómo se distribuye la misma a lo largo de una hoja de estilo.</p>
+    <p>Es recomendable que la especificidad vaya <strong>aumentando gradualmente</strong>, empezando con estilos más genéricos (selectores de elemento) y acabando con casos más específicos.</p>
   </section>
 
   <section>
-    <h2>Ciclomandanga</h2>
+    <h2>Gráfico de especificidad</h2>
+    <div>
+      <img src="../img/specificity-graph-02.png" alt="" style="height: 350px;">
+      <p style="text-align: center;"><cite><a href="http://csswizardry.com/2014/10/the-specificity-graph/">The Specificity Graph</a> - <em>Harry Roberts</em></cite></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Especificidad plana</h2>
+    <p>Intentar mantener los selectores lo más cortos posibles (evitar nesting) nos ayudará a que nuestros componentes no estén atados a un contexto determinado y sean <strong>independientes</strong> del HTML.</p>
+
+    <pre><code>
+  // Cuidado!
+  #main-header nav ul > li .nav-link:first-child { ... }  /* 0, 1, 2, 3 */
+
+  // Mejor
+  .MainNav-link--first { ... }  /* 0, 0, 1, 0 */
+    </code></pre>
   </section>
 
   <section>
     <h2>Nomenclaturas</h2>
     <blockquote>
       "What we want is to be able to write code that is as transparent and self-documenting as possible. Transparency means that it is clear and obvious (to others) in its intent; self-documenting means that we don’t have to lose time to writing and reading lengthy, supplementary documentation."
-      <footer>- Harry Roberts</footer>
+      <footer><cite>- Harry Roberts</cite></footer>
     </blockquote>
+  </section>
+
+  <section>
+    <h2>Enlaces relacionados:</h2>
+    <ul>
+      <li>
+        <a href="https://css-tricks.com/strategies-keeping-css-specificity-low/">“Strategies for Keeping CSS Specificity Low”</a> - <i>Chris Coyier</i>
+      </li>
+
+      <li>
+        <a href="https://vimeo.com/140641366">“CSS For Software Engineers For CSS Developers”</a> - <i>Harry Roberts</i>
+      </li>
+
+      <li>
+        <a href="http://csswizardry.com/2015/04/cyclomatic-complexity-logic-in-css/">“Cyclomatic Complexity: Logic in CSS”</a> - <i>Harry Roberts</i>
+      </li>
   </section>
 </section>
 
@@ -440,21 +489,97 @@
     <h1>Sistemas de Nomenclatura</h1>
   </section>
 
+
   <section>
-    <h2>BEM</h2>
+    <h2 style="line-height: .75; margin-bottom: 3rem;">
+      BEM<br>
+      <span style="font-size: .7em;">(block / element / modifier)</span>
+    </h2>
+    <div>
+      <img src="../img/bem.jpg" alt="" style="height: 350px;">
+      <p style="text-align: center;"><cite><a href="https://en.bem.info/method/">BEM Methodology</a></cite></p>
+    </div>
+  </section>
+
+  <section>
+    <pre class="fz-m"><code>
+  .nombre-del-bloque { ... }
+
+  .nombre-del-bloque__elemento { ... }
+
+  .nombre-del-bloque--modificador { ... }
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>BEM Nesting</h2>
+
+    <pre class="fz-s"><code>
+    .nombre-del-bloque {
+      ...
+
+      &__elemento {
+        ...
+      }
+
+      &--modificador {
+        ...
+      }
+    }
+    </code></pre>
+  </section>
+
+  <section>
+    <pre contenteditable><code class="hljs css">
+  .tab-group { ... } /* 0, 0, 1, 0 */
+
+  .tab-group > li { ... } /* 0, 0, 1, 1 */
+
+  .tab-group a { ... } /* 0, 0, 1, 1 */
+
+  .tab-group a.selected { ... } /* 0, 0, 2, 1 */
+    </code></pre>
+
+    <pre contenteditable class="fragment"><code>
+  .tab-group { ... } /* 0, 0, 1, 0 */
+
+  .tab-group__tab { ... } /* 0, 0, 1, 0 */
+
+  .tab-group__link { ... } /* 0, 0, 1, 0 */
+
+  .tab-group__link--selected { ... } /* 0, 0, 1, 0 */
+    </code></pre>
   </section>
 
   <section>
     <h2>Namespaces</h2>
+    <p><a href="">Namespaces link</a></p>
+  </section>
+
+  <section>
+    <h2>Otros sistemas nomenclaturas</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md">SUIT</a>
+      </li>
+
+      <li>
+        <a href="https://smacss.com/">“SMACSS”</a> - <i>Jonathan Snook.</i>
+      </li>
+
+      <li>
+        <a href="http://seesparkbox.com/foundry/naming_css_stuff_is_really_hard">“Naming CSS Stuff Is Really Hard”</a> - <i>Ethan Muller</i>
+      </li>
+    </ul>
   </section>
 </section>
 
 
 
     </div>
-</div>
+  </div>
 
-<script src="js/reveal/head.min.js"></script>
+  <script src="js/reveal/head.min.js"></script>
 <script src="js/reveal/reveal.js"></script>
 
 <script>

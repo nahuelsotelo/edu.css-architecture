@@ -3,11 +3,87 @@
     <h1>Sistemas de Nomenclatura</h1>
   </section>
 
+
   <section>
-    <h2>BEM</h2>
+    <h2 style="line-height: .75; margin-bottom: 3rem;">
+      BEM<br>
+      <span style="font-size: .7em;">(block / element / modifier)</span>
+    </h2>
+    <div>
+      <img src="../img/bem.jpg" alt="" style="height: 350px;">
+      <p style="text-align: center;"><cite><a href="https://en.bem.info/method/">BEM Methodology</a></cite></p>
+    </div>
+  </section>
+
+  <section>
+    <pre class="fz-m"><code>
+  .nombre-del-bloque { ... }
+
+  .nombre-del-bloque__elemento { ... }
+
+  .nombre-del-bloque--modificador { ... }
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>BEM Nesting</h2>
+
+    <pre class="fz-s"><code>
+    .nombre-del-bloque {
+      ...
+
+      &__elemento {
+        ...
+      }
+
+      &--modificador {
+        ...
+      }
+    }
+    </code></pre>
+  </section>
+
+  <section>
+    <pre contenteditable><code class="hljs css">
+  .tab-group { ... } /* 0, 0, 1, 0 */
+
+  .tab-group > li { ... } /* 0, 0, 1, 1 */
+
+  .tab-group a { ... } /* 0, 0, 1, 1 */
+
+  .tab-group a.selected { ... } /* 0, 0, 2, 1 */
+    </code></pre>
+
+    <pre contenteditable class="fragment"><code>
+  .tab-group { ... } /* 0, 0, 1, 0 */
+
+  .tab-group__tab { ... } /* 0, 0, 1, 0 */
+
+  .tab-group__link { ... } /* 0, 0, 1, 0 */
+
+  .tab-group__link--selected { ... } /* 0, 0, 1, 0 */
+    </code></pre>
   </section>
 
   <section>
     <h2>Namespaces</h2>
+    <p><a href="">Namespaces link</a></p>
+  </section>
+
+  <section>
+    <h2>Otros sistemas nomenclaturas</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md">SUIT</a>
+      </li>
+
+      <li>
+        <a href="https://smacss.com/">“SMACSS”</a> - <i>Jonathan Snook.</i>
+      </li>
+
+      <li>
+        <a href="http://seesparkbox.com/foundry/naming_css_stuff_is_really_hard">“Naming CSS Stuff Is Really Hard”</a> - <i>Ethan Muller</i>
+      </li>
+    </ul>
   </section>
 </section>

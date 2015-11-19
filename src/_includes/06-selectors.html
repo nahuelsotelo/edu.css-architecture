@@ -13,18 +13,52 @@
   </section>
 
   <section>
-    <h2>Curva de especificidad</h2>
+    <p>El gráfico de especificidad es una representación de cómo se distribuye la misma a lo largo de una hoja de estilo.</p>
+    <p>Es recomendable que la especificidad vaya <strong>aumentando gradualmente</strong>, empezando con estilos más genéricos (selectores de elemento) y acabando con casos más específicos.</p>
   </section>
 
   <section>
-    <h2>Ciclomandanga</h2>
+    <h2>Gráfico de especificidad</h2>
+    <div>
+      <img src="../img/specificity-graph-02.png" alt="" style="height: 350px;">
+      <p style="text-align: center;"><cite><a href="http://csswizardry.com/2014/10/the-specificity-graph/">The Specificity Graph</a> - <em>Harry Roberts</em></cite></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Especificidad plana</h2>
+    <p>Intentar mantener los selectores lo más cortos posibles (evitar nesting) nos ayudará a que nuestros componentes no estén atados a un contexto determinado y sean <strong>independientes</strong> del HTML.</p>
+
+    <pre><code>
+  // Cuidado!
+  #main-header nav ul > li .nav-link:first-child { ... }  /* 0, 1, 2, 3 */
+
+  // Mejor
+  .MainNav-link--first { ... }  /* 0, 0, 1, 0 */
+    </code></pre>
   </section>
 
   <section>
     <h2>Nomenclaturas</h2>
     <blockquote>
       "What we want is to be able to write code that is as transparent and self-documenting as possible. Transparency means that it is clear and obvious (to others) in its intent; self-documenting means that we don’t have to lose time to writing and reading lengthy, supplementary documentation."
-      <footer>- Harry Roberts</footer>
+      <footer><cite>- Harry Roberts</cite></footer>
     </blockquote>
+  </section>
+
+  <section>
+    <h2>Enlaces relacionados:</h2>
+    <ul>
+      <li>
+        <a href="https://css-tricks.com/strategies-keeping-css-specificity-low/">“Strategies for Keeping CSS Specificity Low”</a> - <i>Chris Coyier</i>
+      </li>
+
+      <li>
+        <a href="https://vimeo.com/140641366">“CSS For Software Engineers For CSS Developers”</a> - <i>Harry Roberts</i>
+      </li>
+
+      <li>
+        <a href="http://csswizardry.com/2015/04/cyclomatic-complexity-logic-in-css/">“Cyclomatic Complexity: Logic in CSS”</a> - <i>Harry Roberts</i>
+      </li>
   </section>
 </section>
