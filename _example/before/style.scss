@@ -1,0 +1,140 @@
+$grey-color: #c7c3c0;
+$blue-color: #4585f2;
+
+$link-color: $blue-color;
+$link-hover-color: darken( $link-color, 5% );
+
+
+// init.scss
+// ----------------------------------------------------------------------------
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f5f0ec;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+a,
+a:visited,
+a:focus {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover:not(.btn) {
+  color: $link-hover-color;
+}
+
+p a:hover {
+  border-bottom: 1px solid;
+  border-bottom-color: darken($link-hover-color, 10%);
+}
+a img {
+  border: none;
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong,
+b,
+ul,
+i,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+// fonts.scss
+// ----------------------------------------------------------------------------
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700);
+
+
+div,
+li,
+p {
+  font-family: arial, verdana;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.fs20,
+.fs20 span {
+  font-size: 20px !important;
+}
+.bold {
+  font-weight: 700 !important;
+}
+
+
+
+// cards.scss
+// ----------------------------------------------------------------------------
+.card {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+
+  .content-card {
+    padding: 10px;
+  }
+
+  a {
+    display: block;
+  }
+
+  p {
+    color: #000;
+    font-family: 'Source Sans Pro', arial, verdana;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  img {
+    margin: 0;
+    vertical-align: bottom;
+    width: 100%;
+  }
+}
+
+
+
+// home.scss
+// ----------------------------------------------------------------------------
+#home-related {
+  .card {
+    float: left;
+    height: 200px;
+    margin: 0 5px;
+    width: 150px;
+
+    &:hover .bold {
+      color: #4585f1;
+    }
+
+    p {
+      color: #555;
+    }
+  }
+
+  .content-card {
+    padding: 5px 10px;
+  }
+}

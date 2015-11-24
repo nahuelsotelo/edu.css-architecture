@@ -2,6 +2,7 @@ var path = {
     src     : 'src',
     dist    : 'slides',
     tmp     : '.tmp',
+    example : '_example',
 }
 
 var gulp        = require('gulp'),
@@ -70,6 +71,15 @@ gulp.task('css', function() {
         .pipe(gulp.dest( path.dist + '/css' ))
 });
 
+gulp.task('css-example', function() {
+    return gulp.src( path.example + '/**/*.scss' )
+    .pipe(plumber({
+        errorHandler: onError
+    }))
+    .pipe(sass())
+    .pipe(gulp.dest( path.example ))
+});
+
 
 // FONTS ================================================
 gulp.task('fonts', function() {
@@ -134,6 +144,7 @@ gulp.task('browsersync', function() {
 gulp.task('watch', ['browsersync'], function() {
     gulp.watch( path.src + '/**/*.html',            ['html', 'files'] );
     gulp.watch( path.src + '/scss/**/*.scss',       ['css'] );
+    gulp.watch( path.example + '/**/*.scss',        ['css-example'] );
     gulp.watch( path.src + '/js/**/*.js',           ['js'] );
     gulp.watch( path.src + '/img/**/*.+(png|jpg)',  ['images'] );
     gulp.watch( path.src + '/img/**/*.svg',         ['svg'] );
@@ -150,6 +161,7 @@ gulp.task('build', function(callback) {
             'files',
             'svg',
             'css',
+            'css-example',
             'fonts',
             'js'
         ],
